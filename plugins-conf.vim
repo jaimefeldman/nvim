@@ -11,7 +11,7 @@ map <leader>l :wincmd l<CR>
 " Divide vertical.
 nnoremap <leader>v <C-w>v
 " Divide horizontal.
-nnoremap <leader>s <C-w>s
+nnoremap <leader>n <C-w>s
 " Cierra la divición.
 nnoremap <leader>cw <C-w>c
 
@@ -55,6 +55,9 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>X :x<CR>
+nnoremap <Leader>wa :wa<CR>
+nnoremap <Leader>xa :xa<CR>
+nnoremap <Leader>qa :qa<CR>
 
 "para buscar un archivo o una cadena de texto dentro de un archivo
 map <Leader>i :Files<CR>
@@ -126,12 +129,10 @@ nnoremap <Leader>ncl :se nocursorline<CR>
 
 "remplaznado el ctrl+y para seleccionar el item del menu del autocompletado
 "por la tecla enter
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
-"inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<TAB>"
 
-"remplazando el moverse por el pop-menu de autocompletado con j y k
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+"remplazando el moverse por el pop-menu de autocompletado con ctrl-j y ctrl-k
+inoremap <expr> <S-j> pumvisible() ? "\<C-N>" : "j"
+inoremap <expr> <S-k> pumvisible() ? "\<C-P>" : "k"
 
 "nohighlight, liplia los elementos seleccionador o resaltados
 nnoremap <Leader>noh :noh<CR>
@@ -159,4 +160,15 @@ inoremap <C-j> <Esc>:m+<CR>==gi
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
 
+"desabilitando la molesta barra roja genrada en pyghon por vim-polyglot.
+let g:python_highlight_space_errors = 0
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"

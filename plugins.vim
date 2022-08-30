@@ -29,7 +29,10 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-surround'
 
 	" Autocomletado
-	Plug 'sirver/ultisnips'
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'       " Snippets are separated from the engine. Add this if you want them:
+	Plug 'xavierd/clang_complete'
+	Plug 'ervandew/supertab'
 	"no me gusto.
 	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	
@@ -50,9 +53,10 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'scrooloose/nerdcommenter' 
  	
 	Plug 'ycm-core/YouCompleteMe'
-	Plug 'davidhalter/jedi-vim'		"Auto completado de python.
-	Plug 'xavierd/clang_complete'
-    Plug 'honza/vim-snippets'       " Snippets are separated from the engine. Add this if you want them:
+	"Plug 'davidhalter/jedi-vim'		"Auto completado de python.
+
+
+	
 call plug#end()
 
 
