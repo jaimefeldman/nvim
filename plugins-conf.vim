@@ -17,12 +17,47 @@ nnoremap <leader>cw <C-w>c
 
 
 " El Tema Gruvbox.
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
-highlight Normal ctermbg=black
+" Activando el true color
+"set termguicolors
+"set background=light
+"colorscheme gruvbox
+"let g:gruvbox_contrast_light = 'soft'
+
+" El tema mini-hues
+"https://github.com/echasnovski/mini.nvim/tree/main
+colorscheme default
+
+hi Comment ctermfg=15
+hi String ctermfg=13
+hi Conditional ctermfg=9 
+hi Include ctermfg=5
+hi Visual ctermfg=7 ctermbg=15
+hi Type ctermfg=1
+hi Identifier ctermfg=6
+hi Character ctermfg = 7
+hi Constant ctermfg = 11
+hi Number ctermfg = 8
+hi Boolean ctermfg =14      
+hi Repeat ctermfg=3
+hi ColorColumn ctermbg=15 ctermfg=15
+
 set laststatus=2
 set noshowmode
+"set colorcolumn=90
+set number
 
+" Para craer un saltos de liena o corte de linea real.
+set textwidth=90
+set wrapmargin=0
+set formatoptions+=t
+set linebreak 
+
+"Para crear saldos de liena solo para visualizacion.
+"set textwidth=0
+"set wrapmargin=0
+"set wrap
+"set linebreak # (optional - breaks by word rather than character)
+"set columns=80
 
 " Agranda o achica los espacios de las diviciones de pantalla.
 " con el teclado en ingles presionamos el + y se nos agranda la ventana

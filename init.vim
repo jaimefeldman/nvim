@@ -1,5 +1,4 @@
 syntax on
-
 set number
 "set relativenumber
 set mouse=a
@@ -13,14 +12,14 @@ set showmatch
 set sw=2
 set nobackup
 set noswapfile
-set hidden			"no exige guardar el archivo cada vez que pasamos de un buffer a otro.
-set showmatch		"muestar los parentecis coicidientes para saltar de uno a otro.
-set shiftwidth=4	"los espacios que tabula con latecla tab.
-set tabstop=4		"complementa lo de la tecla tab.
-set autoindent		"mantiene la indentacion cando tabulamos.
-set laststatus=2 	"para que la linea de status siempre sea visible.
-set bg=dark			"segun el tema que se use el fondo dera el oscuro.
-set autochdir		"cuando cambiamos de arcvhivo cambia el directorio de trabajo.
+set hidden				"no exige guardar el archivo cada vez que pasamos de un buffer a otro.
+set showmatch			"muestar los parentecis coicidientes para saltar de uno a otro.
+set shiftwidth=4		"los espacios que tabula con latecla tab.
+set tabstop=4			"complementa lo de la tecla tab.
+set autoindent			"mantiene la indentacion cando tabulamos.
+set laststatus=2 		"para que la linea de status siempre sea visible.
+set background=light 	"segun el tema que se use el fondo dera el oscuro.
+set autochdir			"cuando cambiamos de arcvhivo cambia el directorio de trabajo.
 set statusline+=%F
 set hlsearch
 set incsearch
@@ -39,6 +38,9 @@ set signcolumn=yes
 "set cc=80
 "set cursorline
 "set list			" muestra los caracteres ocultos.
+"
+"Descactivando explitamente colorcolumal inicio
+set colorcolumn=
 
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/plugins-conf.vim

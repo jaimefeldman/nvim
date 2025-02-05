@@ -3,8 +3,9 @@
 call plug#begin('~/.config/nvim/plugged')
 	
 	" Themes
-	Plug 'morhetz/gruvbox'
-	Plug 'shinchu/lightline-gruvbox.vim'
+	"Plug 'sainnhe/gruvbox-material'
+	"Plug 'morhetz/gruvbox'
+	Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }
 
 	" Syntax
 	" multitud de resaltados para diferentes lenguajes de programación. 
@@ -26,6 +27,10 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'alvan/vim-closetag' 
 	
 	"selecciona un texo y lo envuelve en paretesis comillas o llaves.
+	"como se usa, se selecciona un texto, pude ser usando el comando vi" o
+	"vi) vi] dependiendo dentro de que este el texto o solo seleccionarlo von
+	"v luego retroceder un caracter y presionar [space + S] seguideo de " o )
+	"o ] o de lo que se quiera rodear.
 	Plug 'tpope/vim-surround'
 
 	" Autocomletado
