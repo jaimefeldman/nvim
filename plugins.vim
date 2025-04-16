@@ -59,9 +59,18 @@ call plug#begin('~/.config/nvim/plugged')
  	
 	Plug 'ycm-core/YouCompleteMe'
 	"Plug 'davidhalter/jedi-vim'		"Auto completado de python.
-
-
 	
+	"colore para archivos swift.
+	Plug 'keith/swift.vim' 
+
+	"plug de autocompletado de parentesis y comillas.
+	Plug 'windwp/nvim-autopairs'
+	
+	"corrector de identación para arhcivos python.
+	Plug 'psf/black'
+
+	"plugin para el colortheme de gruvbox
+	Plug 'ellisonleao/gruvbox.nvim'
 call plug#end()
 
 

@@ -14,11 +14,11 @@ nnoremap <leader>v <C-w>v
 nnoremap <leader>n <C-w>s
 " Cierra la divición.
 nnoremap <leader>cw <C-w>c
-
+" Shift enter para saltar a la siguiente linea sin romperla
+inoremap <M-CR> <Esc>o
 
 " El Tema Gruvbox.
 " Activando el true color
-"set termguicolors
 "set background=light
 "colorscheme gruvbox
 "let g:gruvbox_contrast_light = 'soft'
@@ -26,20 +26,58 @@ nnoremap <leader>cw <C-w>c
 " El tema mini-hues
 "https://github.com/echasnovski/mini.nvim/tree/main
 colorscheme default
+"
+"set background=dark " or light if you want light mode
+"set termguicolors
+"colorscheme gruvbox
 
-hi Comment ctermfg=15
-hi String ctermfg=13
-hi Conditional ctermfg=9 
-hi Include ctermfg=5
-hi Visual ctermfg=7 ctermbg=15
-hi Type ctermfg=1
-hi Identifier ctermfg=6
-hi Character ctermfg = 7
-hi Constant ctermfg = 11
-hi Number ctermfg = 8
-hi Boolean ctermfg =14      
-hi Repeat ctermfg=3
-hi ColorColumn ctermbg=15 ctermfg=15
+"hi Comment ctermfg=7
+"hi String ctermfg=13
+"hi Conditional ctermfg=9 
+"hi Include ctermfg=5
+"hi Visual ctermfg=7 ctermbg=15
+"hi Type ctermfg=1
+"hi Identifier ctermfg=6
+"hi Character ctermfg = 7
+"hi Constant ctermfg = 11
+"hi Number ctermfg = 8
+"hi Boolean ctermfg =14      
+"hi Repeat ctermfg=3
+"hi ColorColumn ctermbg=15 ctermfg=15
+
+" Basado en Gruvbox (cterm)
+hi Normal        ctermfg=223 ctermbg=235
+hi Comment       ctermfg=245 cterm=italic
+hi Constant      ctermfg=172
+hi String        ctermfg=106
+hi Character     ctermfg=108
+hi Number        ctermfg=172
+hi Boolean       ctermfg=106
+hi Identifier    ctermfg=108
+hi Function      ctermfg=108
+hi Statement     ctermfg=132
+hi Conditional   ctermfg=132
+hi Repeat        ctermfg=166
+hi Label         ctermfg=132
+hi Operator      ctermfg=166
+hi Keyword       ctermfg=172
+hi Include       ctermfg=66
+hi Exception     ctermfg=124
+hi PreProc       ctermfg=172
+hi Define        ctermfg=172
+hi Macro         ctermfg=172
+hi Type          ctermfg=66
+hi StorageClass  ctermfg=66
+hi Structure     ctermfg=66
+hi Typedef       ctermfg=66
+hi Visual        ctermfg=235 ctermbg=245
+hi ColorColumn   ctermbg=236
+hi CursorLine    ctermbg=236
+hi LineNr        ctermfg=239
+hi StatusLine    ctermfg=223 ctermbg=236
+hi VertSplit     ctermfg=236 ctermbg=236
+
+
 
 set laststatus=2
 set noshowmode
@@ -158,6 +196,11 @@ nnoremap <Leader>nor :set norelativenumber<CR>
 nnoremap <Leader>ch :se list<CR>
 nnoremap <Leader>noc :se nolist<CR>
 
+"Atajo para el plugin Back de autoindentacion de archivos python.
+nnoremap <Leader>id :Black<CR>
+
+nnoremap <Leader>p :echo expand('%:p')<CR>
+
 "Mostando la linea del cursosr
 nnoremap <Leader>cl :se cursorline<CR>
 nnoremap <Leader>ncl :se nocursorline<CR>
@@ -207,3 +250,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+lua << EOF
+require("nvim-autopairs").setup({})
+EOF
+
