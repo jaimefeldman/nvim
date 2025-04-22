@@ -18,66 +18,117 @@ nnoremap <leader>cw <C-w>c
 inoremap <M-CR> <Esc>o
 
 " El Tema Gruvbox.
-" Activando el true color
-"set background=light
-"colorscheme gruvbox
-"let g:gruvbox_contrast_light = 'soft'
 
 " El tema mini-hues
 "https://github.com/echasnovski/mini.nvim/tree/main
-colorscheme default
-"
-"set background=dark " or light if you want light mode
-"set termguicolors
-"colorscheme gruvbox
 
-"hi Comment ctermfg=7
-"hi String ctermfg=13
-"hi Conditional ctermfg=9 
-"hi Include ctermfg=5
-"hi Visual ctermfg=7 ctermbg=15
-"hi Type ctermfg=1
-"hi Identifier ctermfg=6
-"hi Character ctermfg = 7
-"hi Constant ctermfg = 11
-"hi Number ctermfg = 8
-"hi Boolean ctermfg =14      
-"hi Repeat ctermfg=3
-"hi ColorColumn ctermbg=15 ctermfg=15
+"colorscheme default
+
+function! GruvboxToggle()
+  if &background ==# 'dark'
+    set background=light
+    syntax enable
+    hi Normal        ctermfg=235 ctermbg=NONE
+    hi Comment       ctermfg=246 cterm=italic
+    hi Constant      ctermfg=130
+    hi String        ctermfg=100
+    hi Character     ctermfg=108
+    hi Number        ctermfg=130
+    hi Boolean       ctermfg=100
+    hi Identifier    ctermfg=66
+    hi Function      ctermfg=66
+    hi Statement     ctermfg=132
+    hi Conditional   ctermfg=132
+    hi Repeat        ctermfg=166
+    hi Label         ctermfg=132
+    hi Operator      ctermfg=94
+    hi Keyword       ctermfg=172
+    hi Include       ctermfg=60
+    hi Exception     ctermfg=124
+    hi PreProc       ctermfg=130
+    hi Define        ctermfg=130
+    hi Macro         ctermfg=130
+    hi Type          ctermfg=60
+    hi StorageClass  ctermfg=60
+    hi Structure     ctermfg=60
+    hi Typedef       ctermfg=60
+    hi Visual        ctermfg=223 ctermbg=250
+    hi ColorColumn   ctermbg=252
+    hi CursorLine    ctermbg=252
+    hi LineNr        ctermfg=245
+    hi StatusLine    ctermfg=235 ctermbg=252
+    hi VertSplit     ctermfg=252 ctermbg=252
+    echo "🌓 Modo claro (fondo terminal) activado"
+  else
+    set background=dark
+    syntax enable
+    hi Normal        ctermfg=223 ctermbg=235
+    hi Comment       ctermfg=245 cterm=italic
+    hi Constant      ctermfg=172
+    hi String        ctermfg=106
+    hi Character     ctermfg=108
+    hi Number        ctermfg=172
+    hi Boolean       ctermfg=106
+    hi Identifier    ctermfg=108
+    hi Function      ctermfg=108
+    hi Statement     ctermfg=132
+    hi Conditional   ctermfg=132
+    hi Repeat        ctermfg=166
+    hi Label         ctermfg=132
+    hi Operator      ctermfg=166
+    hi Keyword       ctermfg=172
+    hi Include       ctermfg=66
+    hi Exception     ctermfg=124
+    hi PreProc       ctermfg=172
+    hi Define        ctermfg=172
+    hi Macro         ctermfg=172
+    hi Type          ctermfg=66
+    hi StorageClass  ctermfg=66
+    hi Structure     ctermfg=66
+    hi Typedef       ctermfg=66
+    hi Visual        ctermfg=235 ctermbg=245
+    hi ColorColumn   ctermbg=236
+    hi CursorLine    ctermbg=236
+    hi LineNr        ctermfg=239
+    hi StatusLine    ctermfg=223 ctermbg=236
+    hi VertSplit     ctermfg=236 ctermbg=236
+    echo "🌙 Modo oscuro activado"
+  endif
+endfunction
+
+nnoremap <leader>m :call GruvboxToggle()<CR>
 
 " Basado en Gruvbox (cterm)
-hi Normal        ctermfg=223 ctermbg=235
-hi Comment       ctermfg=245 cterm=italic
-hi Constant      ctermfg=172
-hi String        ctermfg=106
-hi Character     ctermfg=108
-hi Number        ctermfg=172
-hi Boolean       ctermfg=106
-hi Identifier    ctermfg=108
-hi Function      ctermfg=108
-hi Statement     ctermfg=132
-hi Conditional   ctermfg=132
-hi Repeat        ctermfg=166
-hi Label         ctermfg=132
-hi Operator      ctermfg=166
-hi Keyword       ctermfg=172
-hi Include       ctermfg=66
-hi Exception     ctermfg=124
-hi PreProc       ctermfg=172
-hi Define        ctermfg=172
-hi Macro         ctermfg=172
-hi Type          ctermfg=66
-hi StorageClass  ctermfg=66
-hi Structure     ctermfg=66
-hi Typedef       ctermfg=66
-hi Visual        ctermfg=235 ctermbg=245
-hi ColorColumn   ctermbg=236
-hi CursorLine    ctermbg=236
-hi LineNr        ctermfg=239
-hi StatusLine    ctermfg=223 ctermbg=236
-hi VertSplit     ctermfg=236 ctermbg=236
-
-
+"hi Normal        ctermfg=223 ctermbg=235
+"hi Comment       ctermfg=245 cterm=italic
+"hi Constant      ctermfg=172
+"hi String        ctermfg=106
+"hi Character     ctermfg=108
+"hi Number        ctermfg=172
+"hi Boolean       ctermfg=106
+"hi Identifier    ctermfg=108
+"hi Function      ctermfg=108
+"hi Statement     ctermfg=132
+"hi Conditional   ctermfg=132
+"hi Repeat        ctermfg=166
+"hi Label         ctermfg=132
+"hi Operator      ctermfg=166
+"hi Keyword       ctermfg=172
+"hi Include       ctermfg=66
+"hi Exception     ctermfg=124
+"hi PreProc       ctermfg=172
+"hi Define        ctermfg=172
+"hi Macro         ctermfg=172
+"hi Type          ctermfg=66
+"hi StorageClass  ctermfg=66
+"hi Structure     ctermfg=66
+"hi Typedef       ctermfg=66
+"hi Visual        ctermfg=235 ctermbg=245
+"hi ColorColumn   ctermbg=236
+"hi CursorLine    ctermbg=236
+"hi LineNr        ctermfg=239
+"hi StatusLine    ctermfg=223 ctermbg=236
+"hi VertSplit     ctermfg=236 ctermbg=236
 
 set laststatus=2
 set noshowmode
@@ -254,4 +305,20 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 lua << EOF
 require("nvim-autopairs").setup({})
 EOF
+
+function! DetectSystemAppearance()
+  let l:appearance = trim(system("defaults read -g AppleInterfaceStyle 2>/dev/null && echo dark || echo light"))
+  "echom "🌗 Valor de l:appearance = " . l:appearance
+  colorscheme default
+  if match(l:appearance, 'dark') >= 0
+    echom "🌗 se ha cargado modo dark: 🌙" 
+    set background=dark
+  else
+    "echom "🌗 se ha cargado modo light: ☀️" 
+    set background=light
+  endif
+endfunction
+
+" Detectar tema lo antes posible
+call DetectSystemAppearance()
 

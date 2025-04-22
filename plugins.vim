@@ -37,7 +37,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'       " Snippets are separated from the engine. Add this if you want them:
 	Plug 'xavierd/clang_complete'
-	Plug 'ervandew/supertab'
+	"Plug 'ervandew/supertab'
 	"no me gusto.
 	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	
