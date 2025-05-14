@@ -45,5 +45,6 @@ set colorcolumn=
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/plugins-conf.vim
 so ~/.config/nvim/maps.vim
+so ~/.config/nvim/colors.vim
 
 

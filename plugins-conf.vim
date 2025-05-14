@@ -1,14 +1,14 @@
-" Configurando la tecla maestra <space> y luego
-" para movernos entre marcos <frames>. con la tecla space + h, j, k, l
+"Configurando la tecla maestra <space> y luego
+"para movernos entre marcos <frames>. con la tecla space + h, j, k, l
 let mapleader = " "
 map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
-" Dividiendo la pantalla.
+"Dividiendo la pantalla.
 "
-" Divide vertical.
+"Divide vertical.
 nnoremap <leader>v <C-w>v
 " Divide horizontal.
 nnoremap <leader>n <C-w>s
@@ -17,9 +17,9 @@ nnoremap <leader>cw <C-w>c
 " Shift enter para saltar a la siguiente linea sin romperla
 inoremap <M-CR> <Esc>o
 
-" El Tema Gruvbox.
+"El Tema Gruvbox.
 
-" El tema mini-hues
+"El tema mini-hues
 "https://github.com/echasnovski/mini.nvim/tree/main
 
 "colorscheme default
@@ -29,7 +29,7 @@ function! GruvboxToggle()
     set background=light
     syntax enable
     hi Normal        ctermfg=235 ctermbg=NONE
-    hi Comment       ctermfg=246 cterm=italic
+    hi Comment       ctermfg=15 cterm=italic
     hi Constant      ctermfg=130
     hi String        ctermfg=100
     hi Character     ctermfg=108
